@@ -4,8 +4,11 @@ using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
 
+/// <summary>
+/// https://docs.unity3d.com/Manual/JobSystemParallelForJobs.html
+/// </summary>
 [BurstCompile]
-public struct JobCharacterJobParallel : IJobParallelFor {
+public struct CharacterJobParallel : IJobParallelFor {
     private readonly float _speed;
     private readonly float _changeDirectionTime;
     private readonly float _deltaTime;
@@ -15,7 +18,7 @@ public struct JobCharacterJobParallel : IJobParallelFor {
     private NativeArray<Vector2> _moveDirection;
     private NativeArray<Vector2> _currentPosition;
 
-    public JobCharacterJobParallel(
+    public CharacterJobParallel(
         float speed,
         float changeDirectionTime,
         float deltaTime,

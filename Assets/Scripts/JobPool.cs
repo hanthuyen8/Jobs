@@ -39,7 +39,7 @@ public class JobPool : MonoBehaviour {
     }
     
     private void Update() {
-        var job = new JobCharacterJobParallel(
+        var job = new CharacterJobParallel(
             speed,
             changeDirectionTime,
             Time.deltaTime,
